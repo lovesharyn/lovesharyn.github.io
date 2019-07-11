@@ -2,6 +2,9 @@ let chart = echarts.init(document.getElementById('container'));
 let starFilter = document.getElementById('star');
 let elementFilter = document.getElementById('element');
 let weaponFilter = document.getElementById('weapon');
+let amulet1 = document.getElementById('amulet1');
+let amulet2 = document.getElementById('amulet2');
+
 document.querySelectorAll('select').forEach(select => {
     select.addEventListener('change', update);
 });
@@ -242,6 +245,29 @@ function update() {
         if (weaponFilter.value && weaponFilter.value != character.weapon) {
             return false;
         }
+                                     
+var amulet = "[";
+     if (amulet1.value)
+     {
+        amulet += amulate1.value;
+     }
+
+     if (amulet1.value + amulet2.value)
+     {
+        amulet += "+" + amulate2.value;
+     }
+     else if(amulet2.value)
+     {
+        amulet = amulet2.value;
+     }
+
+     amulet += "]";
+     
+     if(amulet.length > 2)
+     {
+         characters.amulets = amulet;
+     }
+            
         return true;
     });
     o_data = filtered;
