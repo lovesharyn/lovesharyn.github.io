@@ -4,6 +4,7 @@ let elementFilter = document.getElementById('element');
 let weaponFilter = document.getElementById('weapon');
 let amulet1 = document.getElementById('amulet1');
 let amulet2 = document.getElementById('amulet2');
+let cachedData = null;
 
 document.querySelectorAll('select').forEach(select => {
     select.addEventListener('change', update);
@@ -193,6 +194,7 @@ function setData(data) {
         }
     });
     characters = tmpdata;
+    cachedData = data;
 }
 
 function sortData(data) {
@@ -235,6 +237,8 @@ var datasrc = {};
 var o_data = [];
 var c_data = [];
 function update() {
+    //Force recalculation everytime
+    sortData(cachedData);
     let filtered = characters.filter(character => {
         if (starFilter.value && starFilter.value != character.star) {
             return false;
