@@ -238,7 +238,7 @@ var o_data = [];
 var c_data = [];
 function update() {
     //Force recalculation everytime
-    sortData(cachedData);
+    setData(cachedData);
     let filtered = characters.filter(character => {
         if (starFilter.value && starFilter.value != character.star) {
             return false;
