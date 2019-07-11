@@ -249,12 +249,12 @@ function update() {
 var amulet = "[";
      if (amulet1.value)
      {
-        amulet += amulate1.value;
+        amulet += amulet1.value;
      }
 
-     if (amulet1.value + amulet2.value)
+     if (amulet1.value && amulet2.value)
      {
-        amulet += "+" + amulate2.value;
+        amulet += "+" + amulet2.value;
      }
      else if(amulet2.value)
      {
