@@ -159,6 +159,29 @@ function setData(data) {
         character.amulets   = character[6];
         character.condition = character[7];
         character.comment   = character[8];
+
+        var amulet = "[";
+        if (amulet1.value)
+        {
+            amulet += amulet1.value;
+        }
+
+        if (amulet1.value && amulet2.value)
+        {
+            amulet += "+" + amulet2.value;
+        }
+        else if(amulet2.value)
+        {
+            amulet = amulet2.value;
+        }
+
+        amulet += "]";
+
+        if(amulet.length > 2)
+        {
+            characters.amulets = amulet;
+        }
+
         console.log(character.amulets)
         console.log(character.comment)
         var j = 9;
@@ -245,29 +268,7 @@ function update() {
         if (weaponFilter.value && weaponFilter.value != character.weapon) {
             return false;
         }
-                                     
-var amulet = "[";
-     if (amulet1.value)
-     {
-        amulet += amulet1.value;
-     }
 
-     if (amulet1.value && amulet2.value)
-     {
-        amulet += "+" + amulet2.value;
-     }
-     else if(amulet2.value)
-     {
-        amulet = amulet2.value;
-     }
-
-     amulet += "]";
-     
-     if(amulet.length > 2)
-     {
-         characters.amulets = amulet;
-     }
-            
         return true;
     });
     o_data = filtered;
