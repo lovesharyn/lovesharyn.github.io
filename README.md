@@ -11,7 +11,7 @@
 ## 护符对照表
 [护符对照表](https://github.com/b1ueb1ues/b1ueb1ues.github.io/blob/master/amulet.csv)
 
- 
+  
 ## stat
 - Level 80, circle node(50/50) adventurer.
 - Dojo(30/30) altar(30/30) 
